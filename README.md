@@ -1,5 +1,5 @@
 ### Various web scraping tasks
-
+---
 #### Get details of book from ISBN number 
 
 Data is fetched fom the following sources - 
@@ -12,7 +12,6 @@ To use the Google Books API, API key is required. [More Information](https://dev
 const book = require("./book")
 
 let data = await book.getBookDetails(["9780141005942","9781408890257"])
-
 ```
 Data returned will be of the following format : 
 
