@@ -5,7 +5,7 @@ Define the API key in `GOOGLE_APP_API` environment variable
 ----
 
 ### Get details of book from ISBN number 
----
+
 Data is fetched fom the following sources - 
 - [Open Library API](https://openlibrary.org/developers/api)  
 - [Google Books API](https://developers.google.com/books/docs/v1/getting_started)
@@ -54,8 +54,9 @@ Data returned will be of the following format :
 }
 ```
 
-### Get webpage metadata from URL
 ---
+### Get webpage metadata from URL
+
 ```
 const website = require("./website")
 let siteData = await website.getMetaData("https://css-tricks.com/essential-meta-tags-social-media/")
@@ -74,6 +75,7 @@ Data returned :
   "twitter_site": "@CSS"
 }
 ```
+----
 ### Get youtube video metadata 
----
+
 
