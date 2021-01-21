@@ -1,3 +1,9 @@
+**Prereq** : Get Google OAuth 2.0 client credentials. Learn more [here](https://developers.google.com/identity/protocols/oauth2). Some features like Google book API, Youtube API etc require that.
+
+Define the API key in `GOOGLE_APP_API` environment variable 
+
+----
+
 ### Get details of book from ISBN number 
 ---
 Data is fetched fom the following sources - 
@@ -9,7 +15,10 @@ To use the Google Books API, API key is required. [More Information](https://dev
 ```{js}
 const book = require("./book")
 let data = await book.getBookDetails(["9780141005942","9781408890257"])
-```
+``` 
+The `getBookDetails` method takes an array of ISBN numbers. 
+
+
 Data returned will be of the following format : 
 
 ```
