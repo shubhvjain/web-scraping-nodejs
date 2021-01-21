@@ -78,4 +78,29 @@ Data returned :
 ----
 ### Get youtube video metadata 
 
+```{js}
+const video = require("video")
+let ytData = await video.getYoutubeMetaData("Bchx0mS7XOY")
+```
 
+Data returned : 
+
+```
+{
+  "id": "Bchx0mS7XOY",
+  "category": "Video",
+  "date": "2021-01-21T18:42",
+  "tags": [
+    "everest",
+    "mount everest",
+    "john oliver mount everest",
+    "last week tonight mount everest"
+  ],
+  "link": "https://www.youtube.com/watch?v=Bchx0mS7XOY",
+  "title": "Everest: Last Week Tonight with John Oliver (HBO)",
+  "note": "Data fetched from [Youtube API](https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails&id=Bchx0mS7XOY) on 2021-01-21T18:42. \nChannel : [LastWeekTonight](https://www.youtube.com/channel/UC3XTzVzaHQEd30rQbuvCtTQ)",
+  "sub_category": "Youtube",
+  "preview": false,
+  "cover_image": "https://i.ytimg.com/vi/Bchx0mS7XOY/default.jpg"
+}
+```
