@@ -1,7 +1,5 @@
-### Various web scraping tasks
+### Get details of book from ISBN number 
 ---
-#### Get details of book from ISBN number 
-
 Data is fetched fom the following sources - 
 - [Open Library API](https://openlibrary.org/developers/api)  
 - [Google Books API](https://developers.google.com/books/docs/v1/getting_started)
@@ -10,7 +8,6 @@ To use the Google Books API, API key is required. [More Information](https://dev
 
 ```{js}
 const book = require("./book")
-
 let data = await book.getBookDetails(["9780141005942","9781408890257"])
 ```
 Data returned will be of the following format : 
@@ -47,3 +44,27 @@ Data returned will be of the following format :
   "notFound": []
 }
 ```
+
+### Get webpage metadata from URL
+---
+```
+const website = require("./website")
+let siteData = await website.getMetaData("https://css-tricks.com/essential-meta-tags-social-media/")
+```
+Data returned : 
+
+```
+{
+  "title": "\nThe Essential Meta Tags for Social Media ",
+  "canonical": "https://css-tricks.com/essential-meta-tags-social-media/",
+  "description": "These days, almost every website encourages visitors to share its pages on social media. We’ve all seen the ubiquitous Facebook and Twitter icons, among",
+  "og_title": "The Essential Meta Tags for Social Media | CSS-Tricks",
+  "og_url": "https://css-tricks.com/essential-meta-tags-social-media/",
+  "og_img": "//css-tricks.com/wp-content/uploads/2016/06/facebook-card.jpg",
+  "og_type": "article",
+  "twitter_site": "@CSS"
+}
+```
+### Get youtube video metadata 
+---
+

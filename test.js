@@ -4,8 +4,7 @@ const website = require("./website")
 //     console.log(JSON.stringify(data,null,2))
 // }).catch(err=>{console.log(err)})
 
-
 website.getMetaData("https://css-tricks.com/essential-meta-tags-social-media/").then(data => {
-    console.log(data)
+    console.log(JSON.stringify(data,null,2))
 //     console.log(JSON.stringify(data,null,2))
  }).catch(err=>{console.log(err)})
