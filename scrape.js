@@ -92,3 +92,4 @@ let get = async (type, data) => {
         throw error
     }
 }
+module.exports.get = get
