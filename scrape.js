@@ -83,15 +83,15 @@ let get = async (type, data) => {
     try {
         let types = {
             'book':async ()=>{
-                let book1 = await getBookDetail(data.isbn)
+                let book1 = await getBookDetail(data.id)
                 return book1
             },
             'website':async()=>{
-                let webData = await getWebsiteMetaData(data.url)
+                let webData = await getWebsiteMetaData(data.id)
                 return webData
             },
             'youtube':async()=>{
-                let ytData = await getYoutubeMetaData(data.youtube)
+                let ytData = await getYoutubeMetaData(data.id)
                 return ytData
             }
           }
