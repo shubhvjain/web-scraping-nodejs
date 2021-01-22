@@ -28,7 +28,7 @@ app.post('/', async (req, res)=> {
     res.json({type:type,data:scrapedData})
 
   } catch (error) {
-    // console.log(error)
+    console.log(error)
     console.log("Error: "+error.message)
     res.json({ "error": error.message })
   }
