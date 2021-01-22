@@ -1,11 +1,7 @@
 const logger = require('morgan');
 const express = require('express');
 const bodyParser = require('body-parser')
-
-const book = require("./book")
-const website = require("./website")
-const video = require("./videos")
-
+const scrape = require("./scrape")
 const app = express();
 app.use(bodyParser.json())
 
@@ -18,25 +14,7 @@ app.use((req, res, next) => {
   }
   next();
 })
-app.get("/", (req, res) => {
-  res.json({ "hello": "Hello world" })
-})
-
-let scrape = async(type,data) =>{
-  try {
-    let types = {
-      'book':()=>{
-        
-      },
-      'website':()=>{},
-      'youtube':()=>{}
-    }
-    if(!types[type]){throw new Error("Item type to scrape not found")}
-    return {}
-  } catch (error) {
-   throw error 
-  }
-}
+app.get("/", (req, res) => {res.json({ "hello": "Hello world" })})
 
 app.post('/', async (req, res)=> {
   try {
@@ -45,10 +23,12 @@ app.post('/', async (req, res)=> {
 
     let type = req.body.type
     let data =  req.body.data
-    let scrapedData = await scrape(type,data)
+    // console.log(data)
+    let scrapedData = await scrape.get(type,data)
     res.json({type:type,data:scrapedData})
 
   } catch (error) {
+    // console.log(error)
     console.log("Error: "+error.message)
     res.json({ "error": error.message })
   }

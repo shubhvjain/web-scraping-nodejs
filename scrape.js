@@ -82,12 +82,23 @@ module.exports.getWebsiteMetaData = getWebsiteMetaData
 let get = async (type, data) => {
     try {
         let types = {
-            'book':()=>{},
-            'website':()=>{},
-            'youtube':()=>{}
+            'book':async ()=>{
+                let book1 = await getBookDetail(data.isbn)
+                return book1
+            },
+            'website':async()=>{
+                let webData = await getWebsiteMetaData(data.url)
+                return webData
+            },
+            'youtube':async()=>{
+                let ytData = await getYoutubeMetaData(data.youtube)
+                return ytData
+            }
           }
           if(!types[type]){throw new Error("Item type to scrape not found")}
-          return {}
+          let data1 = await types[type]()
+          // console.log(data1)
+          return data1
     } catch (error) {
         throw error
     }
