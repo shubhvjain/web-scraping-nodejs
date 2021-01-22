@@ -41,6 +41,7 @@ let getYoutubeMetaData = async (videoId) => {
         let strData = plugins.structuredData("youtube", vidData1)
         searchResults = strData // .found.push(strData)
     }
+    plugins.prettyPrint(searchResults)
     return searchResults
 }
 module.exports.getYoutubeMetaData = getYoutubeMetaData
