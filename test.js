@@ -1,6 +1,7 @@
 const book = require("./book")
 const website = require("./website")
 const video = require("./videos")
+
 // book.getBookDetails(["9780349121086","9788120305960"]).then(data => {
 //     console.log(JSON.stringify(data,null,2))
 // }).catch(err=>{console.log(err)})

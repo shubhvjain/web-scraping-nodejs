@@ -1,6 +1,10 @@
 const logger = require('morgan');
 const express = require('express');
-var bodyParser = require('body-parser')
+const bodyParser = require('body-parser')
+
+const book = require("./book")
+const website = require("./website")
+const video = require("./videos")
 
 const app = express();
 app.use(bodyParser.json())
@@ -15,13 +19,15 @@ app.use((req, res, next) => {
   next();
 })
 app.get("/", (req, res) => {
-  res.json({ "hello": 2323 })
+  res.json({ "hello": "Hello world" })
 })
 
 let scrape = async(type,data) =>{
   try {
     let types = {
-      'book':()=>{},
+      'book':()=>{
+        
+      },
       'website':()=>{},
       'youtube':()=>{}
     }
