@@ -9,7 +9,7 @@ const video = require("./videos")
 //    console.log(JSON.stringify(data,null,2))
 //}).catch(err=>{console.log(err)})
 
-video.getYoutubeMetaData("Bchx0mS7XOY")
-    .then(data => {
-        console.log(JSON.stringify(data, null, 2))
-    })
+// video.getYoutubeMetaData("Bchx0mS7XOY")
+// .then(data => {
+//     console.log(JSON.stringify(data, null, 2))
+// })
